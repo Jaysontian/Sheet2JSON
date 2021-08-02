@@ -5,8 +5,11 @@
 // By Jayson Tian 
 // https://jaysontian.com
 
+/*
 function sheet2JSON(id){
     var newdata = [];
+    var load = false;
+
     var url = 'https://spreadsheets.google.com/feeds/list/' + id + '/od6/public/values?alt=json';
     var request = new XMLHttpRequest();
     request.open('GET', url, true);
@@ -25,22 +28,23 @@ function sheet2JSON(id){
             }
             newdata.push(newrow);
         });
-        return newdata;
-
+        console.log('finished');
+        load = true;
       } else {
         console.log('Reached server but failed to fetch data')
       }
     };
-    request.onerror = function() {
-      console.log('There was an error fetching the file')
-    };
-    request.send();
+    
+    window.setTimeout( () => { if (load) {
+        console.log('loaded');
+        return newdata;
+    } }, 1000);
 }
 
+sheet2JSON('1Eb1_OFLki60vHWHA3C8Grn-hx04A7dvljXsMfOjtVS8');
+*/
 
 
-
-/*
 function sheet2JSON(id){
     var newdata = [];
     $.getJSON('https://spreadsheets.google.com/feeds/list/' + id + '/od6/public/values?alt=json', function(returned) {
@@ -61,5 +65,5 @@ function sheet2JSON(id){
     });
     return newdata;
 }
-*/
+
 
