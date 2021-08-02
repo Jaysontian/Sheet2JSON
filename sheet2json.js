@@ -1,9 +1,10 @@
-/*
-Sheet2JSON
-License MIT
 
-by Jayson Tian https://jaysontian.com
-*/
+// ********************** Sheet2JSON **********************
+// License MIT
+//
+// By Jayson Tian 
+// https://jaysontian.com
+
 
 function sheet2JSON(id){
     var newdata = [];
