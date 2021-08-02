@@ -1,3 +1,9 @@
+/*
+Sheet2JSON
+License MIT
+
+by Jayson Tian https://jaysontian.com
+*/
 
 function sheet2JSON(id){
     var newdata = [];
@@ -20,5 +26,4 @@ function sheet2JSON(id){
     return newdata;
 }
 
-sheet2JSON('1Eb1_OFLki60vHWHA3C8Grn-hx04A7dvljXsMfOjtVS8');
 
