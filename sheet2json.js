@@ -45,7 +45,7 @@ sheet2JSON('1Eb1_OFLki60vHWHA3C8Grn-hx04A7dvljXsMfOjtVS8');
 */
 
 
-function sheet2JSON(id){
+function send2JSON(id){
     var newdata = [];
     $.getJSON('https://spreadsheets.google.com/feeds/list/' + id + '/od6/public/values?alt=json', function(returned) {
         data = returned.feed.entry;
@@ -60,10 +60,13 @@ function sheet2JSON(id){
                     newrow[keyname] = tag[key]['$t'];
                 }
             }
-            newdata.push(newrow);
+            (newdata).push(newrow);
         });
+
+        receive2JSON(newdata)
+    }).fail(()=>{
+        location.reload();
     });
-    return newdata;
 }
 
 
